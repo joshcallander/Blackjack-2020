@@ -14,8 +14,6 @@ namespace Blackjack
 {
     public partial class Form1 : Form
     {
-        int bet = 0;
-
         // Create the lists for the cards
         List<Card> playercardList = new List<Card>()
         {
@@ -30,7 +28,10 @@ namespace Blackjack
         // Create varibles for blackjack
         int playercardSum = 0;
         int bankercardSum = 0;
+        
         int chipCount = 1000;
+        int bet = 0;
+        
         Random random = new Random();
 
         // Create lists
@@ -273,6 +274,7 @@ namespace Blackjack
         private void sumPlayerCards()
         {
             playercardSum = 0;
+            
             for (int i = 0; i < playercardList.Count; i++)
             {
                 playercardSum += playercardList[i].Value;
@@ -297,6 +299,7 @@ namespace Blackjack
         private void sumBankerCards()
         {
             bankercardSum = 0;
+            
             for (int i = 0; i < bankercardList.Count; i++)
             {
                 bankercardSum += bankercardList[i].Value;
@@ -320,15 +323,8 @@ namespace Blackjack
 
         private void DealButton_Click(object sender, EventArgs e)
         {
-            if (playercardSum > 100) //to be changed
-            {
-                resetGame();
-                resultLabel.Text = "Resetting game...";
-            }
-
-            else
-            {
                 playercardSum = 0;
+                
                 int randomCard = selectRandomCard();
                 Card card = deck[randomCard];
                 usedCards.Add(randomCard);
@@ -351,20 +347,15 @@ namespace Blackjack
                 playercardList.Add(card);
 
                 sumPlayerCards();
-                sumBankerCards();
 
                 if (playercardSum > 21)
                 {
-                    MessageBox.Show(String.Format("You lose! The sum of your cards is: {0}", playercardSum)); // Show a you lose message
+                    MessageBox.Show(String.Format("You lose! The sum of your cards is: {0}", playercardSum)); // Show the result - the player has lost the game
                     resetGame(); // Call the reset game function
+                    
+                    chipCount = chipCount - bet;
+                    lblChips.Text = chipCount.ToString();
                 }
-
-                else if (playercardSum == 21)
-                {
-                    MessageBox.Show(String.Format("You win! The sum of your cards is: {0}", playercardSum));
-                    resetGame(); // Call the reset game function
-                }
-            }
         }
 
         private void resetButton_Click(object sender, EventArgs e)
@@ -397,9 +388,6 @@ namespace Blackjack
             usedCards.Clear();
             resultLabel.Text = "Please enter bet amount";
 
-            chipCount = chipCount + bet;
-            lblChips.Text = chipCount.ToString();
-
             PlayerStopButton.Visible = false;
             dealButton.Visible = false;
             resetButton.Visible = false;
@@ -418,12 +406,6 @@ namespace Blackjack
         // palyer stop move
         private void PlayerStopButton_Click(object sender, EventArgs e)
         {
-            if (playercardSum == 0)
-            {
-                resultLabel.Text = "Click the Start button...";
-                return;
-            }
-
             sumBankerCards();
 
             while (bankercardSum <= 16)
@@ -449,22 +431,31 @@ namespace Blackjack
                 sumBankerCards();
             }
 
-            if (bankercardSum > 21)
-            {
-                MessageBox.Show(String.Format("You win! The sum of dealers cards is: {0}", bankercardSum)); // Show the result
+            if (playercardSum > bankercardSum && playercardSum <= 21)
+            { // If the sum of the players cards is greater than the sum of the dealers cards and the sum of the players cards is less than or equal to 21
+                MessageBox.Show(String.Format("You win! The sum of dealers cards is: {0}", bankercardSum)); // Show the result - the player has won the game
                 resetGame(); // Call the reset game function
+                
+                chipCount = chipCount + bet;
+                lblChips.Text = chipCount.ToString();
             }
 
-            else if (playercardSum <= bankercardSum)
-            {
-                MessageBox.Show(String.Format("You lose! The sum of the dealers cards is: {0}", bankercardSum)); // Show the result
+            else if (playercardSum == bankercardSum && playercardSum <= 21)
+            { // If the sum of the players cards is equal to the sum of the bankers cards and the sum of the players cards is less than or euqal to 21
+                MessageBox.Show(String.Format("You lose! The sum of the dealers cards is: {0}", bankercardSum)); // Show the result - the player has lost the game
                 resetGame(); // Call the reset game function
+                
+                chipCount = chipCount - bet;
+                lblChips.Text = chipCount.ToString();
             }
 
-            else
-            {
-                MessageBox.Show(String.Format("You win! The sum of the dealers cards is: {0}", bankercardSum));
+            else if (playercardSum < bankercardSum && bankercardSum <= 21)
+            { // If the sum of the players cards is less than the sum of the dealers cards and the sum of the dealers cards is less than or equal to 21
+                MessageBox.Show(String.Format("You win! The sum of the dealers cards is: {0}", bankercardSum));; // Show the result - the player has lost the game
                 resetGame(); // Call the reset game function
+                
+                chipCount = chipCount - bet;
+                lblChips.Text = chipCount.ToString();
             }
 
         }
