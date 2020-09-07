@@ -19,12 +19,12 @@ namespace Blackjack
         // Create the lists for the cards
         List<Card> playercardList = new List<Card>()
         {
-            new Card() { Value  = 0, Name = "null", Image = "null" }
+            new Card() { Value  = 0, Name = "null", Image = null }
         };
 
         List<Card> bankercardList = new List<Card>()
         {
-            new Card() { Value  = 0, Name = "null", Image = "null" }
+            new Card() { Value  = 0, Name = "null", Image = null }
         };
 
         // Create varibles for blackjack
@@ -49,61 +49,61 @@ namespace Blackjack
         // Create the list for the deck
         List<Card> deck = new List<Card>()
         {
-            new Card() { Value  = 2, Name = "Two Spades", Image = "2S.png" },
-            new Card() { Value = 3, Name = "Three Spades", Image = "3S.png"},
-            new Card() { Value = 4, Name =  "Four Spades", Image = "4S.png"},
-            new Card() { Value = 5, Name = "Five Spades", Image = "5S.png" },
-            new Card() { Value = 6, Name = "Six Spades", Image = "6S.png" },
-            new Card() { Value = 7, Name = "Seven Spades", Image = "7S.png" },
-            new Card() { Value = 8, Name = "Eight Spades", Image = "8S.png" },
-            new Card() { Value = 9, Name = "Nine Spades", Image = "9S.png" },
-            new Card() { Value = 10, Name = "Ten Spades", Image = "10S.png" },
-            new Card() { Value = 10, Name = "Jack Spades", Image = "JS.png" },
-            new Card() { Value = 10, Name = "Queen Spades", Image = "QS.png" },
-            new Card(){ Value = 10, Name = "King Spades", Image = "KS.png" },
-            new Card(){ Value = 11, Name = "Ace Spades", Image = "AS.png" },
+            new Card() { Value  = 2, Name = "Two Spades", Image = Blackjack.Properties.Resources._2S },
+            new Card() { Value = 3, Name = "Three Spades", Image = Blackjack.Properties.Resources._3S },
+            new Card() { Value = 4, Name =  "Four Spades", Image = Blackjack.Properties.Resources._4S },
+            new Card() { Value = 5, Name = "Five Spades", Image = Blackjack.Properties.Resources._5S },
+            new Card() { Value = 6, Name = "Six Spades", Image = Blackjack.Properties.Resources._6S },
+            new Card() { Value = 7, Name = "Seven Spades", Image = Blackjack.Properties.Resources._7S },
+            new Card() { Value = 8, Name = "Eight Spades", Image = Blackjack.Properties.Resources._8S },
+            new Card() { Value = 9, Name = "Nine Spades", Image = Blackjack.Properties.Resources._9S },
+            new Card() { Value = 10, Name = "Ten Spades", Image = Blackjack.Properties.Resources._10S },
+            new Card() { Value = 10, Name = "Jack Spades", Image = Blackjack.Properties.Resources.JS },
+            new Card() { Value = 10, Name = "Queen Spades", Image = Blackjack.Properties.Resources.QS },
+            new Card(){ Value = 10, Name = "King Spades", Image = Blackjack.Properties.Resources.KS },
+            new Card(){ Value = 11, Name = "Ace Spades", Image = Blackjack.Properties.Resources.AS },
 
-            new Card() { Value  = 2, Name = "Two Diamonds", Image = "2D.png" },
-            new Card() { Value = 3, Name = "Three Diamonds", Image = "3D.png" },
-            new Card() { Value = 4, Name =  "Four Diamonds", Image = "4D.png"},
-            new Card() { Value = 5, Name = "Five Diamonds", Image = "5D.png" },
-            new Card() { Value = 6, Name = "Six Diamonds", Image = "6D.png" },
-            new Card(){ Value = 7, Name = "Seven Diamonds", Image = "7D.png" },
-            new Card() { Value = 8, Name = "Eight Diamonds", Image = "8D.png" },
-            new Card() { Value = 9, Name = "Nine Diamonds", Image = "9D.png" },
-            new Card() { Value = 10, Name = "Ten Diamonds", Image = "10D.png" },
-            new Card() { Value = 10, Name = "Jack Diamonds", Image = "JD.png" },
-            new Card() { Value = 10, Name = "Queen Diamonds", Image = "QD.png" },
-            new Card(){ Value = 10, Name = "King Diamonds", Image = "KD.png" },
-            new Card(){ Value = 11, Name = "Ace Diamonds", Image = "AD.png" },
+            new Card() { Value  = 2, Name = "Two Diamonds", Image = Blackjack.Properties.Resources._2D },
+            new Card() { Value = 3, Name = "Three Diamonds", Image = Blackjack.Properties.Resources._3D },
+            new Card() { Value = 4, Name =  "Four Diamonds", Image = Blackjack.Properties.Resources._4D },
+            new Card() { Value = 5, Name = "Five Diamonds", Image = Blackjack.Properties.Resources._5D },
+            new Card() { Value = 6, Name = "Six Diamonds", Image = Blackjack.Properties.Resources._6D },
+            new Card() { Value = 7, Name = "Seven Diamonds", Image = Blackjack.Properties.Resources._7D },
+            new Card() { Value = 8, Name = "Eight Diamonds", Image = Blackjack.Properties.Resources._8D },
+            new Card() { Value = 9, Name = "Nine Diamonds", Image = Blackjack.Properties.Resources._9D },
+            new Card() { Value = 10, Name = "Ten Diamonds", Image = Blackjack.Properties.Resources._10D },
+            new Card() { Value = 10, Name = "Jack Diamonds", Image = Blackjack.Properties.Resources.JD },
+            new Card() { Value = 10, Name = "Queen Diamonds", Image = Blackjack.Properties.Resources.QD },
+            new Card(){ Value = 10, Name = "King Diamonds", Image = Blackjack.Properties.Resources.KD },
+            new Card(){ Value = 11, Name = "Ace Diamonds", Image = Blackjack.Properties.Resources.AD },
 
-            new Card() { Value  = 2, Name = "Two Clubs", Image = "2C.png" },
-            new Card() { Value = 3, Name = "Three Clubs", Image = "3C.png" },
-            new Card() { Value = 4, Name =  "Four Clubs", Image = "4C.png"},
-            new Card() { Value = 5, Name = "Five Clubs", Image = "5C.png" },
-            new Card() { Value = 6, Name = "Six Clubs", Image = "6C.png" },
-            new Card(){ Value = 7, Name = "Seven Clubs", Image = "7C.png" },
-            new Card() { Value = 8, Name = "Eight Clubs", Image = "8C.png" },
-            new Card() { Value = 9, Name = "Nine Clubs", Image= "9C.png" },
-            new Card() { Value = 10, Name = "Ten Clubs", Image = "10C.png" },
-            new Card() { Value = 10, Name = "Jack Clubs", Image = "JC.png" },
-            new Card() { Value = 10, Name = "Queen Clubs", Image = "QC.png" },
-            new Card(){ Value = 10, Name = "King Clubs", Image = "KC.png" },
-            new Card(){ Value = 11, Name = "Ace Clubs", Image = "AC.png" },
+            new Card() { Value  = 2, Name = "Two Clubs", Image = Blackjack.Properties.Resources._2C },
+            new Card() { Value = 3, Name = "Three Clubs", Image = Blackjack.Properties.Resources._3C },
+            new Card() { Value = 4, Name =  "Four Clubs", Image = Blackjack.Properties.Resources._4C },
+            new Card() { Value = 5, Name = "Five Clubs", Image = Blackjack.Properties.Resources._5C },
+            new Card() { Value = 6, Name = "Six Clubs", Image = Blackjack.Properties.Resources._6C },
+            new Card() { Value = 7, Name = "Seven Clubs", Image = Blackjack.Properties.Resources._7C },
+            new Card() { Value = 8, Name = "Eight Clubs", Image = Blackjack.Properties.Resources._8C },
+            new Card() { Value = 9, Name = "Nine Clubs", Image = Blackjack.Properties.Resources._9C },
+            new Card() { Value = 10, Name = "Ten Clubs", Image = Blackjack.Properties.Resources._10C },
+            new Card() { Value = 10, Name = "Jack Clubs", Image = Blackjack.Properties.Resources.JC },
+            new Card() { Value = 10, Name = "Queen Clubs", Image = Blackjack.Properties.Resources.QC },
+            new Card(){ Value = 10, Name = "King Clubs", Image = Blackjack.Properties.Resources.KC },
+            new Card(){ Value = 11, Name = "Ace Clubs", Image = Blackjack.Properties.Resources.AC },
 
-            new Card() { Value  = 2, Name = "Two Hearts", Image = "2H.png" },
-            new Card() { Value = 3, Name = "Three Hearts", Image = "3H.png" },
-            new Card() { Value = 4, Name =  "Four Hearts", Image = "4H.png"},
-            new Card() { Value = 5, Name = "Five Hearts", Image = "5H.png" },
-            new Card() { Value = 6, Name = "Six Hearts", Image = "6H.png" },
-            new Card(){ Value = 7, Name = "Seven Hearts", Image = "7H.png" },
-            new Card() { Value = 8, Name = "Eight Hearts", Image = "8H.png" },
-            new Card() { Value = 9, Name = "Nine Hearts", Image = "9H.png" },
-            new Card() { Value = 10, Name = "Ten Hearts", Image = "10H.png" },
-            new Card() { Value = 10, Name = "Jack Hearts", Image = "JH.png" },
-            new Card() { Value = 10, Name = "Queen Hearts", Image = "QH.png" },
-            new Card(){ Value = 10, Name = "King Hearts", Image = "KH.png" },
-            new Card(){ Value = 11, Name = "Ace Hearts", Image = "AH.png" }
+            new Card() { Value  = 2, Name = "Two Hearts", Image = Blackjack.Properties.Resources._2H },
+            new Card() { Value = 3, Name = "Three Hearts", Image = Blackjack.Properties.Resources._3H },
+            new Card() { Value = 4, Name =  "Four Hearts", Image = Blackjack.Properties.Resources._4H },
+            new Card() { Value = 5, Name = "Five Hearts", Image = Blackjack.Properties.Resources._5H },
+            new Card() { Value = 6, Name = "Six Hearts", Image = Blackjack.Properties.Resources._6H },
+            new Card() { Value = 7, Name = "Seven Hearts", Image = Blackjack.Properties.Resources._7H },
+            new Card() { Value = 8, Name = "Eight Hearts", Image = Blackjack.Properties.Resources._8H },
+            new Card() { Value = 9, Name = "Nine Hearts", Image = Blackjack.Properties.Resources._9H },
+            new Card() { Value = 10, Name = "Ten Hearts", Image = Blackjack.Properties.Resources._10H },
+            new Card() { Value = 10, Name = "Jack Hearts", Image = Blackjack.Properties.Resources.JH },
+            new Card() { Value = 10, Name = "Queen Hearts", Image = Blackjack.Properties.Resources.QH },
+            new Card(){ Value = 10, Name = "King Hearts", Image = Blackjack.Properties.Resources.KH },
+            new Card(){ Value = 11, Name = "Ace Hearts", Image = Blackjack.Properties.Resources.AH }
         };
 
         public Form1()
@@ -113,15 +113,16 @@ namespace Blackjack
             // Remove double buffering
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, PnlGame, new object[] { true });
 
+            // Loop through creating a container for each chip
             for (int i = 0; i <= 8; i++)
             {
-                // Declare the rectangle to put the shark image in for each shark
                 chipContainer[i] = new Rectangle(y, x + 49 * i, 30, 30);
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Reset the game
             resetGame();
         }
 
@@ -130,9 +131,10 @@ namespace Blackjack
             // Get the methods from the graphic's class to paint on the panel
             g = e.Graphics;
 
+            // If showChips is enabled
             if (showChips == true)
             {
-                // Use the DrawImage method to draw each of the sharks onto the panel
+                // Use the DrawImage method to draw each of the chips onto the panel
                 for (int i = 0; i <= 8; i++)
                 {
                     chipColour[i] = random.Next(1, 5);
@@ -167,17 +169,19 @@ namespace Blackjack
 
         private void TmrChips_Tick(object sender, EventArgs e)
         {
+            // If showChips is enabled
             if (showChips == true)
             {
+                // Loop through each of the chips on tick of the timer
                 for (int i = 0; i <= 8; i++)
                 {
                     chipSpeed[i] = random.Next(10, 23);
 
-                    chipContainer[i].X += chipSpeed[i]; // Set each shark to the correct speed
+                    chipContainer[i].X += chipSpeed[i]; // Set each chip to the correct speed
 
                     if (chipContainer[i].X > PnlGame.Width)
-                    { // If the shark reaches the end of the panel
-                        chipContainer[i].X = -25; // Move the shark back to the begining of the panel
+                    { // If the chip reaches the end of the panel
+                        chipContainer[i].X = -25; // Move the chip back to the begining of the panel
                     }
                 }
             }
@@ -188,14 +192,9 @@ namespace Blackjack
         //start the game 
         private void startButton_Click(object sender, EventArgs e)
         {
-            if (playercardSum > 0)
-            {
-                resultLabel.Text = String.Format("Already started.");
-            }
-
-            else if (betValue.Text == "" || betValue.Text == "0")
-            {
-                resultLabel.Text = String.Format("Please enter a valid bet amount");
+            if (betValue.Text == "" || betValue.Text == "0" || (Convert.ToInt32(betValue.Text) < 1) || (Convert.ToInt32(betValue.Text) > chipCount))
+            { // If the bet amount is invalid
+                MessageBox.Show("Please enter a valid bet amount!");
             }
 
             else
@@ -207,8 +206,6 @@ namespace Blackjack
                 Card card1 = deck[randomCard1];
                 usedCards.Add(randomCard1);
                 int randomCard2 = selectRandomCard();
-
-
                 while (usedCards.Contains(randomCard2))
                 {
                     randomCard2 = selectRandomCard();
@@ -222,10 +219,10 @@ namespace Blackjack
                 playercardList.Add(card1);
                 playercardList.Add(card2);
 
-                pictureBox1.ImageLocation = card1.Image;
+                pictureBox1.Image = card1.Image;
                 pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
 
-                pictureBox2.ImageLocation = card2.Image;
+                pictureBox2.Image = card2.Image;
                 pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
 
                 int randomCard3 = selectRandomCard();
@@ -240,7 +237,7 @@ namespace Blackjack
 
                 bankercardList.Add(card3);
 
-                pictureBox4.ImageLocation = card3.Image;
+                pictureBox4.Image = card3.Image;
                 pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
 
                 sumPlayerCards();
@@ -249,6 +246,9 @@ namespace Blackjack
                 dealButton.Visible = true;
                 resetButton.Visible = true;
 
+                pictureBox1.Visible = true;
+                pictureBox2.Visible = true;
+
                 lblBetAmount.Visible = false;
                 betValue.Visible = false;
                 startButton.Visible = false;
@@ -256,10 +256,9 @@ namespace Blackjack
                 showChips = false;
 
                 if (playercardSum == 21)
-                {
-                    resultLabel.Text = String.Format("The sum of your cards is: {0}, you win!", playercardSum);
-                    MessageBox.Show("You win!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    resetGame();
+                { // If the score is 21
+                    MessageBox.Show(String.Format("You win! The sum of your cards is: {0}", playercardSum)); // Show the message box
+                    resetGame(); // Call the reset the game function
                 }
             }
         }
@@ -321,73 +320,61 @@ namespace Blackjack
 
         private void DealButton_Click(object sender, EventArgs e)
         {
-            if (playercardSum == 0)
+            if (playercardSum > 100) //to be changed
             {
-                resultLabel.Text = "Click the Start button...";
-                //displayCardBack(pictureBox3);
+                resetGame();
+                resultLabel.Text = "Resetting game...";
             }
 
             else
             {
-                if (playercardSum > 100) //to be changed
+                playercardSum = 0;
+                int randomCard = selectRandomCard();
+                Card card = deck[randomCard];
+                usedCards.Add(randomCard);
+
+                if (usedCards.Contains(randomCard)) randomCard = selectRandomCard();
+                else randomCard = 1 * randomCard;
+
+                //player new card
+                PictureBox p3 = new PictureBox();
+                p3.Width = 71;
+                p3.Height = 96;
+                p3.Visible = true;
+                p3.Location = new Point(154 + 77 + playerbox.Count * 77, 137);
+                p3.Image = card.Image;
+                p3.SizeMode = PictureBoxSizeMode.AutoSize;
+                this.Controls.Add(p3);
+
+                playerbox.Add(p3);
+
+                playercardList.Add(card);
+
+                sumPlayerCards();
+                sumBankerCards();
+
+                if (playercardSum > 21)
                 {
-                    resetGame();
-                    resultLabel.Text = "Resetting game...";
+                    MessageBox.Show(String.Format("You lose! The sum of your cards is: {0}", playercardSum)); // Show a you lose message
+                    resetGame(); // Call the reset game function
                 }
 
-                else
+                else if (playercardSum == 21)
                 {
-                    playercardSum = 0;
-                    int randomCard = selectRandomCard();
-                    Card card = deck[randomCard];
-                    usedCards.Add(randomCard);
-
-                    if (usedCards.Contains(randomCard)) randomCard = selectRandomCard();
-                    else randomCard = 1 * randomCard;
-
-                    //player new card
-                    PictureBox p3 = new PictureBox();
-                    p3.Width = 71;
-                    p3.Height = 96;
-                    p3.Location = new Point(154 + 77 + playerbox.Count * 77, 137);
-                    p3.ImageLocation = card.Image;
-                    p3.SizeMode = PictureBoxSizeMode.AutoSize;
-                    this.Controls.Add(p3);
-
-                    playerbox.Add(p3);
-
-                    playercardList.Add(card);
-
-                    sumPlayerCards();
-
-                    if (playercardSum > 21)
-                    {
-                        resultLabel.Text = String.Format("The sum of your cards is: {0}, you lose!", playercardSum);
-                        MessageBox.Show("You lose!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        resetGame();
-                    }
-                    else if (playercardSum == 21)
-                    {
-                        resultLabel.Text = String.Format("The sum of your cards is: {0}, you win!", playercardSum);
-                        MessageBox.Show("You win!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        resetGame();
-                    }
+                    MessageBox.Show(String.Format("You win! The sum of your cards is: {0}", playercardSum));
+                    resetGame(); // Call the reset game function
                 }
             }
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            resetGame();
+            resetGame(); // Call the reset game function
         }
 
         private void resetGame()
         {
             resultLabel.Text = null;
-
-            displayCardBack(pictureBox1);
-            displayCardBack(pictureBox2);
-            displayCardBack(pictureBox4);
 
             foreach (PictureBox pb in playerbox)
             {
@@ -411,12 +398,21 @@ namespace Blackjack
             resultLabel.Text = "Please enter bet amount";
 
             chipCount = chipCount + bet;
-        }
+            lblChips.Text = chipCount.ToString();
 
-        private void displayCardBack(PictureBox picturebox)
-        {
-            picturebox.ImageLocation = "b1fv.png";
-            picturebox.SizeMode = PictureBoxSizeMode.AutoSize;
+            PlayerStopButton.Visible = false;
+            dealButton.Visible = false;
+            resetButton.Visible = false;
+
+            lblBetAmount.Visible = true;
+            betValue.Visible = true;
+            startButton.Visible = true;
+
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox4.Visible = false;
+
+            showChips = true;
         }
 
         // palyer stop move
@@ -443,7 +439,7 @@ namespace Blackjack
                 p4.Width = 71;
                 p4.Height = 96;
                 p4.Location = new Point(154 + bankerbox.Count * 77, 12);
-                p4.ImageLocation = card.Image;
+                p4.Image = card.Image;
                 p4.SizeMode = PictureBoxSizeMode.AutoSize;
                 this.Controls.Add(p4);
 
@@ -455,21 +451,20 @@ namespace Blackjack
 
             if (bankercardSum > 21)
             {
-                resultLabel.Text = String.Format("The sum of banker cards is: {0}, you lose!", bankercardSum);
-                MessageBox.Show("You win!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                resetGame();
+                MessageBox.Show(String.Format("You win! The sum of dealers cards is: {0}", bankercardSum)); // Show the result
+                resetGame(); // Call the reset game function
             }
+
             else if (playercardSum <= bankercardSum)
             {
-                resultLabel.Text = String.Format("The sum of your cards is: {0}, you lose!", playercardSum);
-                MessageBox.Show("You lose!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                resetGame();
+                MessageBox.Show(String.Format("You lose! The sum of the dealers cards is: {0}", bankercardSum)); // Show the result
+                resetGame(); // Call the reset game function
             }
+
             else
             {
-                resultLabel.Text = String.Format("The sum of your cards is: {0}, you win!", playercardSum);
-                MessageBox.Show("You win!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                resetGame();
+                MessageBox.Show(String.Format("You win! The sum of the dealers cards is: {0}", bankercardSum));
+                resetGame(); // Call the reset game function
             }
 
         }

@@ -41,7 +41,7 @@
             this.betValue = new System.Windows.Forms.TextBox();
             this.lblBetAmount = new System.Windows.Forms.Label();
             this.TmrChips = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblChips = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -115,6 +115,7 @@
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Visible = false;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // dealButton
             // 
@@ -125,6 +126,7 @@
             this.dealButton.Text = "Deal";
             this.dealButton.UseVisualStyleBackColor = true;
             this.dealButton.Visible = false;
+            this.dealButton.Click += new System.EventHandler(this.DealButton_Click);
             // 
             // PnlGame
             // 
@@ -163,21 +165,21 @@
             this.TmrChips.Enabled = true;
             this.TmrChips.Tick += new System.EventHandler(this.TmrChips_Tick);
             // 
-            // label1
+            // lblChips
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 439);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "1000";
+            this.lblChips.AutoSize = true;
+            this.lblChips.Location = new System.Drawing.Point(26, 439);
+            this.lblChips.Name = "lblChips";
+            this.lblChips.Size = new System.Drawing.Size(31, 13);
+            this.lblChips.TabIndex = 9;
+            this.lblChips.Text = "1000";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 464);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblChips);
             this.Controls.Add(this.dealButton);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.PlayerStopButton);
@@ -207,7 +209,7 @@
         private System.Windows.Forms.Button dealButton;
         private System.Windows.Forms.Panel PnlGame;
         private System.Windows.Forms.Timer TmrChips;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblChips;
         private System.Windows.Forms.TextBox betValue;
         private System.Windows.Forms.Label lblBetAmount;
     }
