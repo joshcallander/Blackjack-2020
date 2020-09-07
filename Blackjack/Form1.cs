@@ -25,10 +25,11 @@ namespace Blackjack
             new Card() { Value  = 0, Name = "null", Image = null }
         };
 
-        // Create varibles for blackjack
+        // Create varibles for total card values
         int playercardSum = 0;
         int bankercardSum = 0;
         
+        // Set up the chip amounts
         int chipCount = 1000;
         int bet = 0;
         
@@ -111,7 +112,7 @@ namespace Blackjack
         {
             InitializeComponent();
 
-            // Remove double buffering
+            // Prevent buffering
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, PnlGame, new object[] { true });
 
             // Loop through creating a container for each chip
@@ -190,16 +191,17 @@ namespace Blackjack
             PnlGame.Invalidate();
         }
 
-        //start the game 
+        //start the game
         private void startButton_Click(object sender, EventArgs e)
         {
             if (betValue.Text == "" || betValue.Text == "0" || (Convert.ToInt32(betValue.Text) < 1) || (Convert.ToInt32(betValue.Text) > chipCount))
             { // If the bet amount is invalid
-                MessageBox.Show("Please enter a valid bet amount!");
+                bet = Convert.ToInt32(betValue.Text); // Get the bet value textbox and set the bet intiger to it
+                MessageBox.Show("Please enter a valid bet amount!"); // Display an error message
             }
 
             else
-            {
+            { // Else the bet amount is valid
                 playercardSum = 0;
                 bankercardSum = 0;
 
@@ -353,8 +355,8 @@ namespace Blackjack
                     MessageBox.Show(String.Format("You lose! The sum of your cards is: {0}", playercardSum)); // Show the result - the player has lost the game
                     resetGame(); // Call the reset game function
                     
-                    chipCount = chipCount - bet;
-                    lblChips.Text = chipCount.ToString();
+                    chipCount = chipCount - bet; // Decrease the chip count by the amount bet
+                    lblChips.Text = chipCount.ToString(); // Change the text of the chip count label to the new chip count
                 }
         }
 
@@ -435,9 +437,9 @@ namespace Blackjack
             { // If the sum of the players cards is greater than the sum of the dealers cards and the sum of the players cards is less than or equal to 21
                 MessageBox.Show(String.Format("You win! The sum of dealers cards is: {0}", bankercardSum)); // Show the result - the player has won the game
                 resetGame(); // Call the reset game function
-                
-                chipCount = chipCount + bet;
-                lblChips.Text = chipCount.ToString();
+                    
+                chipCount = chipCount + bet; // Decrease the chip count by the amount bet
+                lblChips.Text = chipCount.ToString(); // Change the text of the chip count label to the new chip count
             }
 
             else if (playercardSum == bankercardSum && playercardSum <= 21)
@@ -445,8 +447,8 @@ namespace Blackjack
                 MessageBox.Show(String.Format("You lose! The sum of the dealers cards is: {0}", bankercardSum)); // Show the result - the player has lost the game
                 resetGame(); // Call the reset game function
                 
-                chipCount = chipCount - bet;
-                lblChips.Text = chipCount.ToString();
+                chipCount = chipCount - bet; // Decrease the chip count by the amount bet
+                lblChips.Text = chipCount.ToString(); // Change the text of the chip count label to the new chip count
             }
 
             else if (playercardSum < bankercardSum && bankercardSum <= 21)
@@ -454,8 +456,8 @@ namespace Blackjack
                 MessageBox.Show(String.Format("You win! The sum of the dealers cards is: {0}", bankercardSum));; // Show the result - the player has lost the game
                 resetGame(); // Call the reset game function
                 
-                chipCount = chipCount - bet;
-                lblChips.Text = chipCount.ToString();
+                chipCount = chipCount - bet; // Decrease the chip count by the amount bet
+                lblChips.Text = chipCount.ToString(); // Change the text of the chip count label to the new chip count
             }
 
         }
