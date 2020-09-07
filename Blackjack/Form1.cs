@@ -331,8 +331,8 @@ namespace Blackjack
                 Card card = deck[randomCard];
                 usedCards.Add(randomCard);
 
-                if (usedCards.Contains(randomCard)) randomCard = selectRandomCard();
-                else randomCard = 1 * randomCard;
+                if (usedCards.Contains(randomCard)) { randomCard = selectRandomCard(); }
+                else { randomCard = 1 * randomCard; }
 
                 //player new card
                 PictureBox p3 = new PictureBox();
