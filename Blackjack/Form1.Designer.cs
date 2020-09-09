@@ -29,65 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.resultLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.startButton = new System.Windows.Forms.Button();
-            this.PlayerStopButton = new System.Windows.Forms.Button();
+            this.stayButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
-            this.dealButton = new System.Windows.Forms.Button();
+            this.hitButton = new System.Windows.Forms.Button();
             this.PnlGame = new System.Windows.Forms.Panel();
             this.betValue = new System.Windows.Forms.TextBox();
             this.lblBetAmount = new System.Windows.Forms.Label();
             this.TmrChips = new System.Windows.Forms.Timer(this.components);
             this.lblChips = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlGame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // resultLabel
-            // 
-            this.resultLabel.AutoSize = true;
-            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultLabel.Location = new System.Drawing.Point(14, 371);
-            this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(117, 18);
-            this.resultLabel.TabIndex = 0;
-            this.resultLabel.Text = "Game Loading...";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(18, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(113, 21);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(206, 21);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Visible = false;
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(345, 263);
+            this.startButton.Location = new System.Drawing.Point(18, 78);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 4;
@@ -95,16 +54,16 @@
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
-            // PlayerStopButton
+            // stayButton
             // 
-            this.PlayerStopButton.Location = new System.Drawing.Point(516, 429);
-            this.PlayerStopButton.Name = "PlayerStopButton";
-            this.PlayerStopButton.Size = new System.Drawing.Size(75, 23);
-            this.PlayerStopButton.TabIndex = 5;
-            this.PlayerStopButton.Text = "Stay";
-            this.PlayerStopButton.UseVisualStyleBackColor = true;
-            this.PlayerStopButton.Visible = false;
-            this.PlayerStopButton.Click += new System.EventHandler(this.PlayerStopButton_Click);
+            this.stayButton.Location = new System.Drawing.Point(516, 429);
+            this.stayButton.Name = "stayButton";
+            this.stayButton.Size = new System.Drawing.Size(75, 23);
+            this.stayButton.TabIndex = 5;
+            this.stayButton.Text = "Stay";
+            this.stayButton.UseVisualStyleBackColor = true;
+            this.stayButton.Visible = false;
+            this.stayButton.Click += new System.EventHandler(this.stayButton_Click);
             // 
             // resetButton
             // 
@@ -117,27 +76,23 @@
             this.resetButton.Visible = false;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // dealButton
+            // hitButton
             // 
-            this.dealButton.Location = new System.Drawing.Point(613, 429);
-            this.dealButton.Name = "dealButton";
-            this.dealButton.Size = new System.Drawing.Size(75, 23);
-            this.dealButton.TabIndex = 7;
-            this.dealButton.Text = "Deal";
-            this.dealButton.UseVisualStyleBackColor = true;
-            this.dealButton.Visible = false;
-            this.dealButton.Click += new System.EventHandler(this.DealButton_Click);
+            this.hitButton.Location = new System.Drawing.Point(613, 429);
+            this.hitButton.Name = "hitButton";
+            this.hitButton.Size = new System.Drawing.Size(75, 23);
+            this.hitButton.TabIndex = 7;
+            this.hitButton.Text = "Hit";
+            this.hitButton.UseVisualStyleBackColor = true;
+            this.hitButton.Visible = false;
+            this.hitButton.Click += new System.EventHandler(this.hitButton_Click);
             // 
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(170)))), ((int)(((byte)(85)))));
             this.PnlGame.Controls.Add(this.betValue);
             this.PnlGame.Controls.Add(this.lblBetAmount);
-            this.PnlGame.Controls.Add(this.pictureBox1);
-            this.PnlGame.Controls.Add(this.pictureBox2);
             this.PnlGame.Controls.Add(this.startButton);
-            this.PnlGame.Controls.Add(this.pictureBox4);
-            this.PnlGame.Controls.Add(this.resultLabel);
             this.PnlGame.Location = new System.Drawing.Point(1, 1);
             this.PnlGame.Name = "PnlGame";
             this.PnlGame.Size = new System.Drawing.Size(799, 410);
@@ -146,7 +101,7 @@
             // 
             // betValue
             // 
-            this.betValue.Location = new System.Drawing.Point(345, 224);
+            this.betValue.Location = new System.Drawing.Point(18, 43);
             this.betValue.Name = "betValue";
             this.betValue.Size = new System.Drawing.Size(100, 20);
             this.betValue.TabIndex = 5;
@@ -154,7 +109,7 @@
             // lblBetAmount
             // 
             this.lblBetAmount.AutoSize = true;
-            this.lblBetAmount.Location = new System.Drawing.Point(342, 199);
+            this.lblBetAmount.Location = new System.Drawing.Point(15, 18);
             this.lblBetAmount.Name = "lblBetAmount";
             this.lblBetAmount.Size = new System.Drawing.Size(62, 13);
             this.lblBetAmount.TabIndex = 4;
@@ -168,50 +123,56 @@
             // lblChips
             // 
             this.lblChips.AutoSize = true;
-            this.lblChips.Location = new System.Drawing.Point(26, 439);
+            this.lblChips.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChips.Location = new System.Drawing.Point(67, 429);
             this.lblChips.Name = "lblChips";
-            this.lblChips.Size = new System.Drawing.Size(31, 13);
+            this.lblChips.Size = new System.Drawing.Size(40, 18);
             this.lblChips.TabIndex = 9;
             this.lblChips.Text = "1000";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(19, 424);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 464);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblChips);
-            this.Controls.Add(this.dealButton);
+            this.Controls.Add(this.hitButton);
             this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.PlayerStopButton);
+            this.Controls.Add(this.stayButton);
             this.Controls.Add(this.PnlGame);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.PnlGame.ResumeLayout(false);
             this.PnlGame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label resultLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.Button PlayerStopButton;
+        private System.Windows.Forms.Button stayButton;
         private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.Button dealButton;
+        private System.Windows.Forms.Button hitButton;
         private System.Windows.Forms.Panel PnlGame;
         private System.Windows.Forms.Timer TmrChips;
         private System.Windows.Forms.Label lblChips;
         private System.Windows.Forms.TextBox betValue;
         private System.Windows.Forms.Label lblBetAmount;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
