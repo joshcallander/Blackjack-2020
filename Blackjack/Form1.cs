@@ -396,6 +396,8 @@ namespace Blackjack
         private void Form1_Load(object sender, EventArgs e)
         { // On load of the form
             resetGame(); // Call the reset game function
+
+            MessageBox.Show("Enter your bet amount and click the start button. The number of chips you have is shown at the bottom. Press hit to be dealt a new card and stay when you are close to 21. Aim is to get 21, good luck!"); // Show game instructions
         }
 
         private void PnlGame_Paint(object sender, PaintEventArgs e)
